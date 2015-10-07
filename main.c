@@ -28,6 +28,14 @@ int main(void)
 	ft_putstr(ft_strchr("Bonjour, ceci est la fin", 'f'));
 	ft_putstr("\nft_strrchr :\n");
 	ft_putstr(ft_strrchr("Coucou, le test de cette fonction semble ok", 'o'));
+	ft_putstr("\nft_strstr :\n");
+	ft_putstr(ft_strstr("Ceci est un p pe pet peti petis petit test.", "petit"));
+	ft_putstr("\nft_strdup :\n");
+	ft_putstr(ft_strdup("Coucou ceci est un test"));
+	ft_putstr("\nft_tolower :\n");
+	ft_putchar(ft_tolower('G'));
+	ft_putstr("\nft_toupper :\n");
+	ft_putchar(ft_toupper('r'));
 	ft_putchar('\n');
 	return (0);
 }

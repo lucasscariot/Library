@@ -6,7 +6,7 @@
 /*   By: lucas <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/04 01:54:04 by lucas             #+#    #+#             */
-/*   Updated: 2015/08/25 11:36:54 by lucas            ###   ########.fr       */
+/*   Updated: 2015/10/08 01:26:33 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,7 @@ char	*ft_strstr(char *str, char *c);
 char	*ft_strdup(char *str);
 int	ft_tolower(int c);
 int	ft_toupper(int c);
+int	ft_isalpha(int c);
+int	ft_isdigit(int c);
+int	ft_isalnum(int c);
 #endif

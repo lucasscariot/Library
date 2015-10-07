@@ -6,7 +6,7 @@
 /*   By: lucas <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/04 01:55:30 by lucas             #+#    #+#             */
-/*   Updated: 2015/08/25 11:40:05 by lucas            ###   ########.fr       */
+/*   Updated: 2015/10/08 01:28:02 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,17 @@ int main(void)
 	ft_putstr("\nft_strstr :\n");
 	ft_putstr(ft_strstr("Ceci est un p pe pet peti petis petit test.", "petit"));
 	ft_putstr("\nft_strdup :\n");
-	ft_putstr(ft_strdup("Coucou ceci est un test"));
+	ft_putstr(ft_strdup("Bim bam boum"));
 	ft_putstr("\nft_tolower :\n");
 	ft_putchar(ft_tolower('G'));
 	ft_putstr("\nft_toupper :\n");
 	ft_putchar(ft_toupper('r'));
+	ft_putstr("\nft_isalpha :\n");
+	ft_putnbr(ft_isalpha('L'));
+	ft_putstr("\nft_isdigit :\n");
+	ft_putnbr(ft_isdigit('5'));
+	ft_putstr("\nft_isalnum :\n");
+	ft_putnbr(ft_isalnum('\0'));
 	ft_putchar('\n');
 	return (0);
 }

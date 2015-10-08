@@ -6,7 +6,7 @@
 /*   By: lucas <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/04 01:55:30 by lucas             #+#    #+#             */
-/*   Updated: 2015/10/08 07:51:30 by lucas            ###   ########.fr       */
+/*   Updated: 2015/10/08 13:46:40 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 int main(void)
 {
+	char	*str;
+
+	str = malloc(sizeof(str) * 100);
 	ft_putstr("ft_putnbr :\n");
 	ft_putnbr(21);
 	ft_putstr("\nft_atoi :\n");
@@ -44,6 +47,8 @@ int main(void)
 	ft_putnbr(ft_isdigit('5'));
 	ft_putstr("\nft_isalnum :\n");
 	ft_putnbr(ft_isalnum('\0'));
+	ft_putstr("\nft_strcpy :\n");
+	ft_putstr(ft_strcpy(str, "Fonctionne."));
 	ft_putchar('\n');
 	return (0);
 }

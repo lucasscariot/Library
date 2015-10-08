@@ -6,7 +6,7 @@
 /*   By: lucas <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/04 01:54:04 by lucas             #+#    #+#             */
-/*   Updated: 2015/10/08 01:26:33 by                  ###   ########.fr       */
+/*   Updated: 2015/10/08 07:54:51 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	ft_strncmp(char *s1, char *s2, int n);
 char	*ft_strchr(char *str, char c);
 char 	*ft_strrchr(char *str, char c);
 char	*ft_strstr(char *str, char *c);
+char	*ft_strnstr(char *str, char *c, int n);
 char	*ft_strdup(char *str);
 int	ft_tolower(int c);
 int	ft_toupper(int c);

@@ -6,7 +6,7 @@
 /*   By: lucas <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/04 01:55:30 by lucas             #+#    #+#             */
-/*   Updated: 2015/10/08 01:28:02 by                  ###   ########.fr       */
+/*   Updated: 2015/10/08 07:51:30 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int main(void)
 	ft_putstr(ft_strrchr("Coucou, le test de cette fonction semble ok", 'o'));
 	ft_putstr("\nft_strstr :\n");
 	ft_putstr(ft_strstr("Ceci est un p pe pet peti petis petit test.", "petit"));
+	ft_putstr("\nft_strnstr :\n");
+	ft_putstr(ft_strnstr("Ceci est un peut etre un petit test", "pet", 3));
 	ft_putstr("\nft_strdup :\n");
 	ft_putstr(ft_strdup("Bim bam boum"));
 	ft_putstr("\nft_tolower :\n");

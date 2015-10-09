@@ -6,7 +6,7 @@
 /*   By: lucas <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/04 01:55:30 by lucas             #+#    #+#             */
-/*   Updated: 2015/10/09 11:46:20 by                  ###   ########.fr       */
+/*   Updated: 2015/10/09 17:06:34 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,14 +92,40 @@ int	t_ft_strncpy(void)
 	return (0);
 }
 
+int	t_ft_strchr(void)
+{
+	ft_putstr("  ft_strchr		|	");
+	if (!ft_strcmp(ft_strchr("Hier j'ai vu un zebre", 'z'), "zebre" ))
+		return (1);
+	return (0);
+}
+
+int	t_ft_strrchr(void)
+{
+	ft_putstr("  ft_strrchr		|	");
+	if (!ft_strcmp(ft_strrchr("z z z z z z z z z z z z z zebre", 'z'), "zebre"))
+		return (1);
+	return (0);
+}
+
+int	t_ft_strstr(void)
+{
+	ft_putstr("  ft_strstr		|	");
+	if (!strcmp(ft_strstr("Une aiguille dans une meule de foin", "aiguille"), strstr("Une aiguille dans une meule de foin", "aiguille")))
+		return (1);
+	return (0);
+}
+
 int	main(void)
 {
 	char	*str;
 	str = malloc(sizeof(str) * 100);
 
 	ft_putstr("--------------------------------------------------\n");
+	ft_putstr("               ");
 	ft_putchar('T');
 	ft_putstr("esting your ftlib :\n");
+	ft_putstr("                  ");
 	ft_putnbr(52);
 	ft_putstr(" functions\n");
 	ft_putstr("--------------------------------------------------\n");
@@ -110,7 +136,15 @@ int	main(void)
 	ft_show_result(t_ft_strdup());
 	ft_show_result(t_ft_strcpy());
 	ft_show_result(t_ft_strncpy());
-	
+	ft_show_result(t_ft_strchr());
+	ft_show_result(t_ft_strrchr());
+	ft_show_result(t_ft_strstr());
+
+	ft_putstr(" ------------------\n");
+	ft_putstr("   A continuer..\n");
+	ft_putstr(" ------------------\n");
+
+
 	ft_putchar('\n');
 	return (0);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucas <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/08/04 01:55:30 by lucas             #+#    #+#             */
-/*   Updated: 2015/10/09 17:06:34 by                  ###   ########.fr       */
+/*   Created: 2015/11/23 12:22:56 by lscariot          #+#    #+#             */
+/*   Updated: 2015/11/23 16:45:57 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,15 @@ int	t_ft_strstr(void)
 	return (0);
 }
 
+int	t_ft_strcat(void)
+{
+	ft_putstr("  ft_strcat		|	");
+	ft_putstr(ft_strcat("Cou","cou"));
+	if (!strcmp(ft_strcat("Cou", "cou"), ft_strcat("Cou", "cou"))
+		return (1);
+	return (0);
+}
+
 int	main(void)
 {
 	char	*str;
@@ -139,6 +148,7 @@ int	main(void)
 	ft_show_result(t_ft_strchr());
 	ft_show_result(t_ft_strrchr());
 	ft_show_result(t_ft_strstr());
+	ft_show_result(t_ft_strcat());
 
 	ft_putstr(" ------------------\n");
 	ft_putstr("   A continuer..\n");

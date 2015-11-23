@@ -6,7 +6,7 @@
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:22:56 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/23 16:45:57 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/23 18:11:05 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,8 +119,36 @@ int	t_ft_strstr(void)
 int	t_ft_strcat(void)
 {
 	ft_putstr("  ft_strcat		|	");
-	ft_putstr(ft_strcat("Cou","cou"));
-	if (!strcmp(ft_strcat("Cou", "cou"), ft_strcat("Cou", "cou"))
+	char src[50], dest[50];
+
+	strcpy(src,  "Cou");
+	strcpy(dest, "cou");
+	if (ft_strcat(dest, src), "Coucou")
+		return (1);
+	return (0);
+
+}
+
+int t_ft_strncat(void)
+{
+	ft_putstr("  ft_strncat		|	");
+	char src[50], dest[50];
+
+	strcpy(src, "Cou");
+	strcpy(dest, "couccoucoucoucou");
+	if (strcmp(ft_strncat(dest, src, 3), "Coucou"))
+		return (1);
+	return (0);
+}
+
+int t_ft_strlcat(void)
+{
+	ft_putstr("  ft_strlcat		|	");
+	char src[50], dest[50];
+
+	strcpy(src, "Coucoucoucou");
+	strcpy(dest, "cou");
+	if (strcmp(ft_strncat(dest, src, 3), "Coucou"))
 		return (1);
 	return (0);
 }
@@ -138,7 +166,7 @@ int	main(void)
 	ft_putnbr(52);
 	ft_putstr(" functions\n");
 	ft_putstr("--------------------------------------------------\n");
-	
+
 	ft_show_result(t_ft_atoi());
 	ft_show_result(t_ft_strlen());
 	ft_show_result(t_ft_strcmp());
@@ -149,12 +177,9 @@ int	main(void)
 	ft_show_result(t_ft_strrchr());
 	ft_show_result(t_ft_strstr());
 	ft_show_result(t_ft_strcat());
-
-	ft_putstr(" ------------------\n");
-	ft_putstr("   A continuer..\n");
-	ft_putstr(" ------------------\n");
-
-
+	ft_show_result(t_ft_strncat());
+	ft_show_result(t_ft_strlcat());
+	
 	ft_putchar('\n');
 	return (0);
 }

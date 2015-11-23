@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 12:13:51 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/23 17:49:58 by lscariot         ###   ########.fr       */
+/*   Created: 2015/11/23 17:29:10 by lscariot          #+#    #+#             */
+/*   Updated: 2015/11/23 17:48:27 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-char	*ft_strnstr(char *str, char *c, int n)
+char	*ft_strlcat(char *dest, const char *src, size_t n)
 {
-	int	i;
-	int	j;
-	int	r;
-	int t;
+	int i;
+	int j;
 
-	t = n;
 	i = 0;
 	j = 0;
-	while (c[j] != '\0')
+	while (n >= '0' && dest[i] != '\0')
+		i++;
+	while (src[j] != '\0')
 	{
-		while (str[i] != '\0' && str[i] != c[j])
-			i++;
-		r = i;
-		while (str[i++] == c[j++] && n >= 0)
-			n--;
-		if (c[j] == '\0' || n == 0)
-			return (&str[r]);
-		if (str[i] == '\0')
-			return (NULL);
-		i = r + 1;
-		j = 0;
-		n = t;
+		dest[i] = src[j];
+		i++;
+		j++;
+		n--;
 	}
-	return (NULL);
+	dest[i] = '\0';
+	return (dest);
 }

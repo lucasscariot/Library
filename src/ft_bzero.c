@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 12:13:51 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/24 12:00:55 by lscariot         ###   ########.fr       */
+/*   Created: 2015/11/24 11:17:46 by lscariot          #+#    #+#             */
+/*   Updated: 2015/11/24 11:27:43 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include <libft.h>
 
-char	*ft_strnstr(char *str, char *c, size_t n)
-{	
-	size_t	len;
+void	ft_bzero(void *s, int n)
+{
+	char	*mem;
 
-	if (*c == '\0')
-		return ((char *)str);
-	len = ft_strlen(c);
-	while (*str != '\0' && n-- >= len)
-	{
-		if (*str == *c && memcmp(str, c, len) == 0)
-			return ((char *)str);
-		str++;
-	}
-	return (NULL);
+	mem = (char*)s;
+	while (n--)
+		*mem++ = '0';
 }

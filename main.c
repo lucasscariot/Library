@@ -6,7 +6,7 @@
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:22:56 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/24 15:27:18 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/24 17:26:02 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -266,6 +266,32 @@ int		t_ft_memmove(void)
 	return (0);
 }
 
+int		t_ft_memchr(void)
+{
+	char str[] = "Ceci es un test";
+
+	ft_putstr("  ft_memchr		|	");
+	if (!strcmp(ft_memchr(str, 't', 50), "test"))
+		return (1);
+	return(0);
+}
+
+int		t_ft_memcmp(void)
+{
+	ft_putstr("  ft_memcmp		|	");
+	char str1[15];
+	char str2[15];
+	int ret;
+
+	memcpy(str1, "Coucou", 6);
+	memcpy(str2, "coucoU", 6);
+	ret = memcmp(str1, str2, 5);
+	if (ret == -32)
+		return (1);
+	return(0);
+}
+
+
 int		main(void)
 {
 	char	*str;
@@ -302,6 +328,8 @@ int		main(void)
 	ft_show_result(t_ft_memcpy());
 	ft_show_result(t_ft_memccpy());
 	ft_show_result(t_ft_memmove());
+	ft_show_result(t_ft_memchr());
+	ft_show_result(t_ft_memcmp());
 	ft_putchar('\n');
 	return (0);
 }

@@ -2,8 +2,8 @@ memset		ok
 bzero		ok
 memcpy		ok
 memccpy		ok
-memmov
-memchr
+memmove		ok
+memchr		
 memcmp
 strlen      ok
 strdup      ok

@@ -6,7 +6,7 @@
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:22:56 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/24 08:46:07 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/24 11:06:55 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,14 @@ int	t_ft_strstr(void)
 	return (0);
 }
 
+int	t_ft_strnstr(void)
+{
+	ft_putstr("  ft_strnstr		|	");
+	if (!strcmp(ft_strnstr("Une aiguille dans une meule de foin", "aiguille", 3), strnstr("Une aiguille dans une meule de foin", "aiguille", 3)))
+		return (1);
+	return (0);
+}
+
 int	t_ft_strcat(void)
 {
 	ft_putstr("  ft_strcat		|	");
@@ -193,6 +201,19 @@ int	t_ft_isprint(void)
 	return (0);
 }
 
+int	t_ft_memset(void)
+{
+	ft_putstr("  ft_memset		|	");
+	char str[50];
+
+	strcpy(str,"Bonjour bonjour");
+
+	ft_memset(str,'$',7);
+	if (!strcmp(str, "$$$$$$$ bonjour"))
+		return (1);
+	return (0);
+}
+
 int	main(void)
 {
 	char	*str;
@@ -216,6 +237,7 @@ int	main(void)
 	ft_show_result(t_ft_strchr());
 	ft_show_result(t_ft_strrchr());
 	ft_show_result(t_ft_strstr());
+	//ft_show_result(t_ft_strnstr());
 	ft_show_result(t_ft_strcat());
 	ft_show_result(t_ft_strncat());
 	ft_show_result(t_ft_strlcat());
@@ -224,6 +246,7 @@ int	main(void)
 	ft_show_result(t_ft_isascii());
 	ft_show_result(t_ft_isdigit());
 	ft_show_result(t_ft_isprint());
+	ft_show_result(t_ft_memset());
 
 	ft_putchar('\n');
 	return (0);

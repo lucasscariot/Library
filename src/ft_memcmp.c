@@ -6,7 +6,7 @@
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 16:59:27 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/24 17:22:08 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/24 17:31:41 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	{
 		if (str[i] != str2[i])
 			return (str[i] - str2[i]);
+		i++;
 	}
 	return (str[i] - str2[i]);
 }

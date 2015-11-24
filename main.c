@@ -6,7 +6,7 @@
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:22:56 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/24 17:26:02 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/24 17:30:50 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -283,10 +283,10 @@ int		t_ft_memcmp(void)
 	char str2[15];
 	int ret;
 
-	memcpy(str1, "Coucou", 6);
-	memcpy(str2, "coucoU", 6);
+	memcpy(str1, "coucou", 6);
+	memcpy(str2, "Coucou", 6);
 	ret = memcmp(str1, str2, 5);
-	if (ret == -32)
+	if (ret == 32)
 		return (1);
 	return(0);
 }

@@ -6,7 +6,7 @@
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:22:56 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/24 11:58:01 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/24 15:27:18 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_show_result(int n)
 		printf("\033[31;01mFail\033[00m\n");
 }
 
-int	t_ft_atoi(void)
+int		t_ft_atoi(void)
 {
 	ft_putstr("  ft_atoi		|	");
 	if (ft_atoi("876") == 876)
@@ -31,7 +31,7 @@ int	t_ft_atoi(void)
 	return (0);
 }
 
-int	t_ft_strlen(void)
+int		t_ft_strlen(void)
 {
 	ft_putstr("  ft_strlen		|	");
 	if (ft_strlen("Ceci est une grosse phrase") == strlen("Ceci est une grosse phrase"))
@@ -39,23 +39,24 @@ int	t_ft_strlen(void)
 	return (0);
 }
 
-int	t_ft_strcmp(void)
+int		t_ft_strcmp(void)
 {
 	ft_putstr("  ft_strcmp		|	");
-	if(strcmp("Coucou", "Coucou") == ft_strcmp("Coucou", "Coucou"))
+	if (strcmp("Coucou", "Coucou") == ft_strcmp("Coucou", "Coucou"))
 	{
-		if(strcmp("", "") == ft_strcmp("", ""))
+		if (strcmp("", "") == ft_strcmp("", ""))
 		{
-			if(strcmp("", "Ce") == ft_strcmp("", "Ce"))
+			if (strcmp("", "Ce") == ft_strcmp("", "Ce"))
 				return (1);
 		}
 	}
 	return (0);
 }
 
-int	t_ft_strdup(void)
+int		t_ft_strdup(void)
 {
 	char	*str;
+
 	str = malloc(sizeof(char) * 20 + 1);
 	str = "pif paf pouf";
 	ft_putstr("  ft_strdup		|	");
@@ -64,11 +65,12 @@ int	t_ft_strdup(void)
 	return (0);
 }
 
-int	t_ft_strcpy(void)
+int		t_ft_strcpy(void)
 {
-	ft_putstr("  ft_strcpy		|       ");
 	char	*str1;
 	char	*str2;
+
+	ft_putstr("  ft_strcpy		|	");
 	str1 = malloc(sizeof(str1) * 20);
 	str2 = malloc(sizeof(str2) * 20);
 	str1 = "pif paf pouf";
@@ -78,11 +80,12 @@ int	t_ft_strcpy(void)
 	return (0);
 }
 
-int	t_ft_strncpy(void)
+int		t_ft_strncpy(void)
 {
+	char	*str1;
+	char	*str2;
+
 	ft_putstr("  ft_strncpy		|	");
-	char    *str1;
-	char    *str2;
 	str1 = malloc(sizeof(str1) * 20);
 	str2 = malloc(sizeof(str2) * 20);
 	str1 = "pif paf pouf";
@@ -92,15 +95,15 @@ int	t_ft_strncpy(void)
 	return (0);
 }
 
-int	t_ft_strchr(void)
+int		t_ft_strchr(void)
 {
 	ft_putstr("  ft_strchr		|	");
-	if (!ft_strcmp(ft_strchr("Hier j'ai vu un zebre", 'z'), "zebre" ))
+	if (!ft_strcmp(ft_strchr("Hier j'ai vu un zebre", 'z'), "zebre"))
 		return (1);
 	return (0);
 }
 
-int	t_ft_strrchr(void)
+int		t_ft_strrchr(void)
 {
 	ft_putstr("  ft_strrchr		|	");
 	if (!ft_strcmp(ft_strrchr("z z z z z z z z z z z z z zebre", 'z'), "zebre"))
@@ -108,7 +111,7 @@ int	t_ft_strrchr(void)
 	return (0);
 }
 
-int	t_ft_strstr(void)
+int		t_ft_strstr(void)
 {
 	ft_putstr("  ft_strstr		|	");
 	if (!strcmp(ft_strstr("Une aiguille dans une meule de foin", "aiguille"), strstr("Une aiguille dans une meule de foin", "aiguille")))
@@ -116,7 +119,7 @@ int	t_ft_strstr(void)
 	return (0);
 }
 
-int	t_ft_strnstr(void)
+int		t_ft_strnstr(void)
 {
 	ft_putstr("  ft_strnstr		|	");
 	if (!strcmp(ft_strnstr("Une aiguille dans une meule de foin", "aiguille", '3'), strnstr("Une aiguille dans une meule de foin", "aiguille", '3')))
@@ -124,24 +127,25 @@ int	t_ft_strnstr(void)
 	return (0);
 }
 
-int	t_ft_strcat(void)
+int		t_ft_strcat(void)
 {
-	ft_putstr("  ft_strcat		|	");
-	char src[50], dest[50];
+	char src[50];
+	char dest[50];
 
-	strcpy(src,  "Cou");
+	ft_putstr("  ft_strcat		|	");
+	strcpy(src, "Cou");
 	strcpy(dest, "cou");
 	if (ft_strcat(dest, src), "Coucou")
 		return (1);
 	return (0);
-
 }
 
-int t_ft_strncat(void)
+int		t_ft_strncat(void)
 {
-	ft_putstr("  ft_strncat		|	");
-	char src[50], dest[50];
+	char	src[50];
+	char	dest[50];
 
+	ft_putstr("  ft_strncat		|	");
 	strcpy(src, "Cou");
 	strcpy(dest, "couccoucoucoucou");
 	if (strcmp(ft_strncat(dest, src, 3), "Coucou"))
@@ -149,10 +153,11 @@ int t_ft_strncat(void)
 	return (0);
 }
 
-int t_ft_strlcat(void)
+int		t_ft_strlcat(void)
 {
 	ft_putstr("  ft_strlcat		|	");
-	char src[50], dest[50];
+	char src[50];
+	char dest[50];
 
 	strcpy(src, "Coucoucoucou");
 	strcpy(dest, "cou");
@@ -161,7 +166,7 @@ int t_ft_strlcat(void)
 	return (0);
 }
 
-int	t_ft_isalnum(void)
+int		t_ft_isalnum(void)
 {
 	ft_putstr("  ft_isalnum		|	");
 	if (ft_isalnum('B') && ft_isalnum('2') && !ft_isalnum('\0'))
@@ -169,7 +174,7 @@ int	t_ft_isalnum(void)
 	return (0);
 }
 
-int	t_ft_isalpha(void)
+int		t_ft_isalpha(void)
 {
 	ft_putstr("  ft_isalpha		|	");
 	if (ft_isalpha('A') && ft_isalpha('Z') && !ft_isalpha('5'))
@@ -177,7 +182,7 @@ int	t_ft_isalpha(void)
 	return (0);
 }
 
-int	t_ft_isascii(void)
+int		t_ft_isascii(void)
 {
 	ft_putstr("  ft_isascii		|	");
 	if (ft_isascii(125) && !ft_isascii(1093) && ft_isascii('t'))
@@ -185,15 +190,15 @@ int	t_ft_isascii(void)
 	return (0);
 }
 
-int	t_ft_isdigit(void)
+int		t_ft_isdigit(void)
 {
 	ft_putstr("  ft_isdigit		|	");
-	if(ft_isdigit('9') && !ft_isdigit(984) && ft_isdigit('0'))
+	if (ft_isdigit('9') && !ft_isdigit(984) && ft_isdigit('0'))
 		return (1);
 	return (0);
 }
 
-int	t_ft_isprint(void)
+int		t_ft_isprint(void)
 {
 	ft_putstr("  ft_isprint		|	");
 	if (ft_isprint('-') && ft_isprint (' ') && !ft_isprint('\0'))
@@ -201,19 +206,19 @@ int	t_ft_isprint(void)
 	return (0);
 }
 
-int	t_ft_memset(void)
+int		t_ft_memset(void)
 {
 	ft_putstr("  ft_memset		|	");
 	char	str[50];
 
-	strcpy(str,"Bonjour bonjour");
-	ft_memset(str,'$',7);
+	strcpy(str, "Bonjour bonjour");
+	ft_memset(str, '$', 7);
 	if (!strcmp(str, "$$$$$$$ bonjour"))
 		return (1);
 	return (0);
 }
 
-int	t_ft_bzero(void)
+int		t_ft_bzero(void)
 {
 	ft_putstr("  ft_bzero		|	");
 	char	str[50];
@@ -225,11 +230,47 @@ int	t_ft_bzero(void)
 	return (0);
 }
 
-int	main(void)
+int		t_ft_memcpy(void)
+{
+	char	src[50] = "Ceci est un test";
+	char	dest[50];
+
+	ft_putstr("  ft_memcpy		|	");
+	ft_memcpy(dest, src, 50);
+	if (!strcmp(src, dest))
+		return (1);
+	return (0);
+}
+
+int		t_ft_memccpy(void)
+{
+	char	src[50] = "Ceci est un test ~ TEST";
+	char	dest[50];
+
+	ft_putstr("  ft_memccpy		|	");
+	ft_memccpy(dest, src, '~', 50);
+	if (!strcmp(dest, "Ceci est un test ~"))
+		return (1);
+	return (0);
+}
+
+int		t_ft_memmove(void)
+{
+	char dest[] = "oldstring";
+	char src[]  = "newstring";
+
+	ft_putstr("  ft_memmove		|	");
+	ft_memmove(dest, src, 9);
+	if (!strcmp(dest, "newstring"))
+		return (1);
+	return (0);
+}
+
+int		main(void)
 {
 	char	*str;
-	str = malloc(sizeof(str) * 100);
 
+	str = malloc(sizeof(str) * 100);
 	ft_putstr("--------------------------------------------------\n");
 	ft_putstr("               ");
 	ft_putchar('T');
@@ -238,7 +279,6 @@ int	main(void)
 	ft_putnbr(52);
 	ft_putstr(" functions\n");
 	ft_putstr("--------------------------------------------------\n");
-
 	ft_show_result(t_ft_atoi());
 	ft_show_result(t_ft_strlen());
 	ft_show_result(t_ft_strcmp());
@@ -259,7 +299,9 @@ int	main(void)
 	ft_show_result(t_ft_isprint());
 	ft_show_result(t_ft_memset());
 	ft_show_result(t_ft_bzero());
-
+	ft_show_result(t_ft_memcpy());
+	ft_show_result(t_ft_memccpy());
+	ft_show_result(t_ft_memmove());
 	ft_putchar('\n');
 	return (0);
 }

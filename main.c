@@ -6,7 +6,7 @@
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:22:56 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/23 18:11:05 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/24 08:46:07 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,6 +153,46 @@ int t_ft_strlcat(void)
 	return (0);
 }
 
+int	t_ft_isalnum(void)
+{
+	ft_putstr("  ft_isalnum		|	");
+	if (ft_isalnum('B') && ft_isalnum('2') && !ft_isalnum('\0'))
+		return (1);
+	return (0);
+}
+
+int	t_ft_isalpha(void)
+{
+	ft_putstr("  ft_isalpha		|	");
+	if (ft_isalpha('A') && ft_isalpha('Z') && !ft_isalpha('5'))
+		return (1);
+	return (0);
+}
+
+int	t_ft_isascii(void)
+{
+	ft_putstr("  ft_isascii		|	");
+	if (ft_isascii(125) && !ft_isascii(1093) && ft_isascii('t'))
+		return (1);
+	return (0);
+}
+
+int	t_ft_isdigit(void)
+{
+	ft_putstr("  ft_isdigit		|	");
+	if(ft_isdigit('9') && !ft_isdigit(984) && ft_isdigit('0'))
+		return (1);
+	return (0);
+}
+
+int	t_ft_isprint(void)
+{
+	ft_putstr("  ft_isprint		|	");
+	if (ft_isprint('-') && ft_isprint (' ') && !ft_isprint('\0'))
+		return (1);
+	return (0);
+}
+
 int	main(void)
 {
 	char	*str;
@@ -179,7 +219,12 @@ int	main(void)
 	ft_show_result(t_ft_strcat());
 	ft_show_result(t_ft_strncat());
 	ft_show_result(t_ft_strlcat());
-	
+	ft_show_result(t_ft_isalnum());
+	ft_show_result(t_ft_isalpha());
+	ft_show_result(t_ft_isascii());
+	ft_show_result(t_ft_isdigit());
+	ft_show_result(t_ft_isprint());
+
 	ft_putchar('\n');
 	return (0);
 }

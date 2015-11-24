@@ -9,14 +9,14 @@ strlen      ok
 strdup      ok
 strcpy      ok
 strncpy     ok
-strcat
-strncat
-strlcat
+strcat		ok
+strncat		ok
+strlcat		ok
 strchr      ok
 strrchr     ok
 strstr      ok
 strnstr		ok
-strcmp      error
+strcmp      ok
 strncmp     ok
 atoi        ok
 isalpha     ok

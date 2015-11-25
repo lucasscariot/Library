@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 17:05:40 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/23 17:47:50 by lscariot         ###   ########.fr       */
+/*   Created: 2015/11/25 12:52:07 by lscariot          #+#    #+#             */
+/*   Updated: 2015/11/25 14:28:27 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include <libft.h>
 
-char	*ft_strncat(char *dest, const char *src, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int i;
-	int j;
+	char	*str;
+	int		i;
 
 	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
-		i++;
-	while (n >= '0' && src[j] != '\0')
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-		n--;
-	}
-	dest[i] = '\0';
-	return (dest);
+	str = malloc(sizeof(char) * ft_strlen(s));
+	if (s == NULL || f == NULL || str == NULL)
+		return (NULL);
+	while (s != NULL && *s)
+		*str++ = (*f)(i++, *s++);
+	return (str);
 }

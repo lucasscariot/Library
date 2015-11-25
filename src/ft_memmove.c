@@ -6,13 +6,13 @@
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 14:48:53 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/24 15:36:37 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/25 09:25:17 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void 	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*tmp;
 

@@ -6,14 +6,14 @@
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:13:51 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/24 12:00:55 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/25 09:23:32 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 char	*ft_strnstr(char *str, char *c, size_t n)
-{	
+{
 	size_t	len;
 
 	if (*c == '\0')

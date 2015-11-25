@@ -6,11 +6,11 @@
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:13:24 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/23 12:29:31 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/25 10:41:43 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include <libft.h>
 
 void	ft_strclr(char *s)
 {

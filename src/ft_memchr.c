@@ -6,7 +6,7 @@
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 15:38:03 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/24 16:43:23 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/25 09:22:08 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	char	*str;
 
 	str = (char*)s;
-	while(*str != '\0' && *str!= c && n--)
+	while (*str != '\0' && *str != c && n--)
 		str++;
 	return ((void*)str);
 }

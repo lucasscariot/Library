@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 17:05:40 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/23 17:47:50 by lscariot         ###   ########.fr       */
+/*   Created: 2015/11/25 12:16:18 by lscariot          #+#    #+#             */
+/*   Updated: 2015/11/25 13:21:48 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include <libft.h>
 
-char	*ft_strncat(char *dest, const char *src, size_t n)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	int i;
-	int j;
+	char	*str;
 
-	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
-		i++;
-	while (n >= '0' && src[j] != '\0')
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-		n--;
-	}
-	dest[i] = '\0';
-	return (dest);
+	str = malloc(sizeof(char) * (ft_strlen(s)));
+	if (s == NULL || f == NULL || str == NULL)
+		return (NULL);
+	while (s++ != NULL && *s)
+		*str++ = (*f)(*s);
+	return (str);
 }

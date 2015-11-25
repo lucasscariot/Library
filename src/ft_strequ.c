@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 17:05:40 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/23 17:47:50 by lscariot         ###   ########.fr       */
+/*   Created: 2015/11/25 13:37:59 by lscariot          #+#    #+#             */
+/*   Updated: 2015/11/25 13:53:55 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include <libft.h>
 
-char	*ft_strncat(char *dest, const char *src, size_t n)
+int	ftt_strequ(char const *s1, char const *s2)
 {
-	int i;
-	int j;
-
-	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
-		i++;
-	while (n >= '0' && src[j] != '\0')
+	while (*s1++ == *s2++)
 	{
-		dest[i] = src[j];
-		i++;
-		j++;
-		n--;
+		if (*s1 == '\0' && *s2 == '\0')
+			return (1);
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (0);
 }

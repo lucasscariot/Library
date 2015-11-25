@@ -6,7 +6,7 @@
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:22:56 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/24 17:30:50 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/25 14:30:35 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -224,8 +224,8 @@ int		t_ft_bzero(void)
 	char	str[50];
 
 	strcpy(str, "Bonjour bonjour");
-	ft_bzero(str, 7);
-	if (!strcmp(str, "0000000 bonjour"))
+	bzero(str, 7);
+	if (!strcmp(str, "\0\0\0\0\0\0\0 bonjour"))
 		return (1);
 	return (0);
 }
@@ -300,7 +300,7 @@ int		main(void)
 	ft_putstr("--------------------------------------------------\n");
 	ft_putstr("               ");
 	ft_putchar('T');
-	ft_putstr("esting your ftlib :\n");
+	ft_putstr("esting your LibFt :\n");
 	ft_putstr("                  ");
 	ft_putnbr(52);
 	ft_putstr(" functions\n");
@@ -330,6 +330,7 @@ int		main(void)
 	ft_show_result(t_ft_memmove());
 	ft_show_result(t_ft_memchr());
 	ft_show_result(t_ft_memcmp());
+	ft_putstr("  		-- Others --");
 	ft_putchar('\n');
 	return (0);
 }

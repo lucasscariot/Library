@@ -6,13 +6,13 @@
 #    By: jcamhi <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/25 18:15:40 by jcamhi            #+#    #+#              #
-#    Updated: 2015/11/25 18:41:35 by jcamhi           ###   ########.fr        #
+#*   Updated: 2015/11/27 12:02:48 by                  ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
 SRC_PATH = ./
 
-SRC_NAME = ft_atoi.c \
+SRC_NAME =	   ft_atoi.c \
 		   ft_strrchr.c \
 		   ft_bzero.c \
 		   ft_isalnum.c \

@@ -6,7 +6,7 @@
 /*   By: lucas <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/04 01:54:04 by lucas             #+#    #+#             */
-/*   Updated: 2015/11/26 23:00:40 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/27 12:07:34 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_strcpy(char *dest, char *src);
 char	*ft_strncpy(char *dest, const char *src, size_t n);
 char	*ft_strcat(char *dest, const char *src);
 char	*ft_strncat(char *dest, const char *src, size_t n);
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, int n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);

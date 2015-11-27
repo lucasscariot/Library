@@ -6,39 +6,60 @@
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 14:17:08 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/27 04:44:43 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/27 16:22:16 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_strsplit(char const *s, char c)
+int	ft_split_count(char const *s, char c)
 {
-	char	**str;
-	int		i;
-	int		j;
+	int	i;
+	int	word;
 
 	i = 0;
-	j = 0;
-	str = malloc(1);
-	str[0] = malloc(1);
-	if (s[i] == c)
+	word = 0;
+	while (s[i] == c && s[i] != '\0')
 		i++;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c && s[i - 1] != c)
-		{
-			ft_putchar('\n');
-			i++;
-		}
+		if (s[i] == c && s[i - 1] != c && s[i + 1] != '\0')
+			word++;
 		i++;
-		ft_putchar(s[i]);
 	}
-	return (str);
+	return (word);
 }
 
-int	main(void)
+int	ft_split_len(char const *s, char c)
 {
-	ft_strsplit("*Hello***Ceci*Est***un**test***:", '*');
-	return (0);
+	int	i;
+
+	i = 0;
+	while (s[i] != c && s[i] != '\0')
+		i++;
+	return (i);
+}
+
+char	**ft_strsplit(char const *s, char c)
+{
+	char	**str;
+	int	i;
+	int	word;
+
+	i = 0;
+	word = ft_split_count(s, c);
+	str = malloc(sizeof(char *) * word + 1);
+	if (str == NULL)
+		return (NULL);
+	while (word--)
+	{
+		while (*s == c && *s != '\0')
+			s++;
+		str[i] = ft_strsub(s, 0, ft_split_len(s, c));
+		if (str[i] == NULL)
+			return (NULL);
+		s = s + ft_split_len(s, c);
+		i++;
+	}
+	return (str);
 }

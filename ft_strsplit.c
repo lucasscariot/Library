@@ -6,7 +6,7 @@
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 14:17:08 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/27 17:49:24 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/27 20:20:06 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ char	**ft_strsplit(char const *s, char c)
 	i = 0;
 	word = ft_split_count(s, c);
 	str = malloc(sizeof(char *) * word + 1);
-	if (str == NULL)
-		return (NULL);
 	while (word--)
 	{
 		while (*s == c && *s != '\0')

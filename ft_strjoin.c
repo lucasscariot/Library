@@ -6,7 +6,7 @@
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 10:02:50 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/26 15:18:01 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/27 20:18:35 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
 
+	if (!s1 || !s2)
+		return (NULL);
 	str = malloc(sizeof(char) * ft_strlen(s1) + ft_strlen(s2));
 	if (str == NULL)
 		return (NULL);

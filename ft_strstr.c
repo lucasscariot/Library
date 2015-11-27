@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 12:13:43 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/26 15:14:20 by lscariot         ###   ########.fr       */
+/*   Created: 2015/11/23 12:15:11 by lscariot          #+#    #+#             */
+/*   Updated: 2015/11/26 17:43:55 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strstr(char *str, char *c)
 {
-	int	i;
+	size_t	len;
 
-	i = 0;
-	while (src[i] != '\0')
+	if (*c == '\0')
+		return ((char *)str);
+	len = ft_strlen(c);
+	while (*str != '\0')
 	{
-		dest[i] = src[i];
-		i++;
+		if (*str == *c  && ft_memcmp(str, c, len) == 0)
+			return ((char *)str);
+		str++;
 	}
-	dest[i] = src[i];
-	return (dest);
+	return (NULL);
 }

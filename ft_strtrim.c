@@ -6,7 +6,7 @@
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 10:31:35 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/27 02:25:56 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/27 04:30:23 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,25 @@ char	*ft_strtrim(char const *s)
 {
 	char	*str;
 	int		i;
-	int		j;
+	int		len;
 
-	i = 0;
-	j = ft_strlen(s);
-	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
-		i++;
-	while (s[j] == ' ' || s[j] == '\n' || s[j] == '\t')
-		j--;
-	str = malloc(sizeof(char) * (j - i + 1));
-	if(str == NULL)
+	len = ft_strlen(s);
+	i = -1;
+	if (s == NULL)
 		return (NULL);
-	while (j > i && s[i] != '\0')
-		*str++ = s[i++];
+	while (s[len - 1] == ' ' || s[len - 1] == '\t' || s[len - 1] == '\n')
+		len--;
+	while (s[++i] == ' ' || s[i] == '\t' || s[i] == '\n')
+		len--;
+	if (len <= 0)
+		len = 0;
+	str = malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
+		return (NULL);
+	s += i;
+	i = -1;
+	while (++i < len)
+		str[i] = *s++;
+	str[i] = '\0';
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:15:11 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/26 17:43:55 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/27 03:20:01 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strstr(char *str, char *c)
 	len = ft_strlen(c);
 	while (*str != '\0')
 	{
-		if (*str == *c  && ft_memcmp(str, c, len) == 0)
+		if (*str == *c && ft_memcmp(str, c, len) == 0)
 			return ((char *)str);
 		str++;
 	}

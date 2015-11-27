@@ -6,7 +6,7 @@
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 14:17:08 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/26 15:53:49 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/27 04:44:43 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,24 @@ char	**ft_strsplit(char const *s, char c)
 	i = 0;
 	j = 0;
 	str = malloc(1);
+	str[0] = malloc(1);
+	if (s[i] == c)
+		i++;
 	while (s[i] != '\0')
 	{
-		if (s[i++] == c)
-			j++;
+		if (s[i] == c && s[i - 1] != c)
+		{
+			ft_putchar('\n');
+			i++;
+		}
+		i++;
+		ft_putchar(s[i]);
 	}
 	return (str);
+}
+
+int	main(void)
+{
+	ft_strsplit("*Hello***Ceci*Est***un**test***:", '*');
+	return (0);
 }

@@ -6,14 +6,13 @@
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:14:13 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/26 22:57:12 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/27 03:18:36 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	if (s1 && s2 && n)
 	{

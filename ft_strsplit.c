@@ -6,31 +6,34 @@
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 14:17:08 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/27 16:22:16 by                  ###   ########.fr       */
+/*   Updated: 2015/11/27 17:49:24 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_split_count(char const *s, char c)
+int		ft_split_count(char const *s, char c)
 {
-	int	i;
-	int	word;
+	int		word;
+	int		i;
 
 	i = 0;
 	word = 0;
-	while (s[i] == c && s[i] != '\0')
-		i++;
-	while (s[i] != '\0')
+	while (*s != '\0')
 	{
-		if (s[i] == c && s[i - 1] != c && s[i + 1] != '\0')
+		if (i == 1 && *s == c)
+			i = 0;
+		if (i == 0 && *s != c)
+		{
+			i = 1;
 			word++;
-		i++;
+		}
+		s++;
 	}
 	return (word);
 }
 
-int	ft_split_len(char const *s, char c)
+int		ft_split_len(char const *s, char c)
 {
 	int	i;
 
@@ -43,8 +46,8 @@ int	ft_split_len(char const *s, char c)
 char	**ft_strsplit(char const *s, char c)
 {
 	char	**str;
-	int	i;
-	int	word;
+	int		i;
+	int		word;
 
 	i = 0;
 	word = ft_split_count(s, c);

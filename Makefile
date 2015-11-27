@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jcamhi <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: lscariot <lscariot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2015/11/25 18:15:40 by jcamhi            #+#    #+#              #
-#*   Updated: 2015/11/27 12:02:48 by                  ###   ########.fr       *#
+#    Created: 2015/11/27 17:48:04 by lscariot          #+#    #+#              #
+#    Updated: 2015/11/27 17:48:14 by lscariot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC_PATH = ./
 
-SRC_NAME =	   ft_atoi.c \
+SRC_NAME =	ft_atoi.c \
 		   ft_strrchr.c \
 		   ft_bzero.c \
 		   ft_isalnum.c \

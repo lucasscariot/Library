@@ -6,7 +6,7 @@
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 14:17:08 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/27 20:20:06 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/28 09:38:33 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_split_count(char const *s, char c)
 	int		i;
 
 	i = 0;
-	word = 0;
+	word = 1;
 	while (*s != '\0')
 	{
 		if (i == 1 && *s == c)
@@ -51,13 +51,16 @@ char	**ft_strsplit(char const *s, char c)
 
 	i = 0;
 	word = ft_split_count(s, c);
-	str = malloc(sizeof(char *) * word + 1);
+	str = malloc(sizeof(char *) * word);
+	if (!str)
+		return (0);
 	while (word--)
 	{
 		while (*s == c && *s != '\0')
 			s++;
-		str[i] = ft_strsub(s, 0, ft_split_len(s, c));
-		if (str[i] == NULL)
+		if (str[i] != NULL)
+			str[i] = ft_strsub(s, 0, ft_split_len(s, c));
+		else
 			return (NULL);
 		s = s + ft_split_len(s, c);
 		i++;

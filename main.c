@@ -6,7 +6,7 @@
 /*   By: student@42 <@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 14:43:06 by student@42        #+#    #+#             */
-/*   Updated: 2015/11/27 18:48:45 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/28 11:59:14 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -224,10 +224,10 @@ int					main(void)
 	D_ADD_TEST(strsplit);
 #define	D_ITOA
 	D_ADD_TEST(itoa);
-//#define	D_STRTRIM
-//	D_ADD_TEST(strtrim);
-//#define	D_LSTNEW
-//	D_ADD_TEST(lstnew);
+#define	D_STRTRIM
+	D_ADD_TEST(strtrim);
+#define	D_LSTNEW
+	D_ADD_TEST(lstnew);
 //#define	D_LSTDELONE
 //	D_ADD_TEST(lstdelone);
 //#define	D_LSTDEL
@@ -1429,13 +1429,13 @@ int				uf_test_strncat(void)
 	if (strcmp(dest, dest2) != 0)
 		D_ERROR
 	strncat(dest, "Hello ", 10);
-    	ft_strncat(dest2, "Hello ", 10);
-    	if (strcmp(dest, dest2) != 0)
-    	    D_ERROR
+		ft_strncat(dest2, "Hello ", 10);
+		if (strcmp(dest, dest2) != 0)
+			D_ERROR
 	strncat(dest, "1234\n78", 7);
-    	ft_strncat(dest2, "1234\n78", 7);
-    	if (strcmp(dest, dest2) != 0)
-        	D_ERROR
+		ft_strncat(dest2, "1234\n78", 7);
+		if (strcmp(dest, dest2) != 0)
+			D_ERROR
 	return (1);
 }
 #endif

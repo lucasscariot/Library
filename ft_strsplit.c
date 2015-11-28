@@ -3,67 +3,83 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lscariot <lscariot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 14:17:08 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/28 09:38:33 by lscariot         ###   ########.fr       */
+/*   Created: 2015/11/28 11:44:59 by lscariot          #+#    #+#             */
+/*   Updated: 2015/11/28 11:47:35 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_split_count(char const *s, char c)
+size_t	ft_cont(char const *s, char c)
 {
-	int		word;
-	int		i;
+	size_t		i;
+	size_t		j;
 
 	i = 0;
-	word = 1;
-	while (*s != '\0')
+	j = 0;
+	while (s[i])
 	{
-		if (i == 1 && *s == c)
-			i = 0;
-		if (i == 0 && *s != c)
+		while (s[i] == c)
+			i++;
+		if (s[i] != c && s[i])
 		{
-			i = 1;
-			word++;
+			j++;
+			i++;
+			while (s[i] != c && s[i])
+				i++;
 		}
-		s++;
 	}
-	return (word);
+	return (j);
 }
 
-int		ft_split_len(char const *s, char c)
+char	*ft_add(size_t *i, char const *s, char c)
 {
-	int	i;
+	size_t		size;
+	size_t		j;
+	char		*str;
 
-	i = 0;
-	while (s[i] != c && s[i] != '\0')
-		i++;
-	return (i);
+	size = *i;
+	j = 0;
+	while (s[size] && s[size] != c)
+		size++;
+	str = ft_strnew(size - *i);
+	if (!str)
+		return (NULL);
+	while (*i < size)
+	{
+		str[j] = s[*i];
+		j++;
+		*i += 1;
+	}
+	return (str);
 }
 
 char	**ft_strsplit(char const *s, char c)
 {
-	char	**str;
-	int		i;
-	int		word;
+	char		**str;
+	size_t		o;
+	size_t		*i;
+	size_t		j;
 
-	i = 0;
-	word = ft_split_count(s, c);
-	str = malloc(sizeof(char *) * word);
-	if (!str)
-		return (0);
-	while (word--)
+	o = 0;
+	i = &o;
+	j = 0;
+	if (!s)
+		return (NULL);
+	str = malloc(sizeof(char *) * (ft_cont(s, c) + 1));
+	if (str)
 	{
-		while (*s == c && *s != '\0')
-			s++;
-		if (str[i] != NULL)
-			str[i] = ft_strsub(s, 0, ft_split_len(s, c));
-		else
-			return (NULL);
-		s = s + ft_split_len(s, c);
-		i++;
+		while (j < ft_cont(s, c))
+		{
+			while (s[*i] == c)
+				*i += 1;
+			if (s[*i] != c && s[*i])
+				str[j++] = ft_add(i, s, c);
+		}
+		str[j] = 0;
+		return (str);
 	}
-	return (str);
+	return (0);
 }

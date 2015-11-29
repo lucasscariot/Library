@@ -6,7 +6,7 @@
 #    By: lscariot <lscariot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/27 17:48:04 by lscariot          #+#    #+#              #
-#    Updated: 2015/11/29 09:34:39 by lscariot         ###   ########.fr        #
+#    Updated: 2015/11/29 11:01:36 by lscariot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,8 +68,7 @@ SRC_NAME =	ft_atoi.c \
 		   ft_lstdelone.c \
 		   ft_lstdel.c \
 		   ft_lstadd.c \
-		   ft_lstiter.c \
-		   ft_lstmap.c
+		   ft_lstiter.c
 
 OBJ_PATH = ./
 

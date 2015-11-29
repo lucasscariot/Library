@@ -6,7 +6,7 @@
 /*   By: lscariot <lscariot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 11:44:59 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/28 11:47:35 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/29 09:44:09 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,18 +68,16 @@ char	**ft_strsplit(char const *s, char c)
 	j = 0;
 	if (!s)
 		return (NULL);
-	str = malloc(sizeof(char *) * (ft_cont(s, c) + 1));
-	if (str)
+	str = (char **)malloc(sizeof(char *) * (ft_cont(s, c) + 1));
+	if (!str)
+		return (0);
+	while (j < ft_cont(s, c))
 	{
-		while (j < ft_cont(s, c))
-		{
-			while (s[*i] == c)
-				*i += 1;
-			if (s[*i] != c && s[*i])
-				str[j++] = ft_add(i, s, c);
-		}
-		str[j] = 0;
-		return (str);
+		while (s[*i] == c)
+			*i += 1;
+		if (s[*i] != c && s[*i])
+			str[j++] = ft_add(i, s, c);
 	}
-	return (0);
+	str[j] = 0;
+	return (str);
 }

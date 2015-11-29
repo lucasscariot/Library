@@ -6,7 +6,7 @@
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:13:58 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/26 15:03:30 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/29 09:39:00 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(char *str)
 	int		i;
 
 	i = 0;
-	dup = malloc(sizeof(dup) * ft_strlen(str) + 1);
+	dup = (char *)malloc(sizeof(dup) * ft_strlen(str) + 1);
 	while (str[i] != '\0')
 	{
 		dup[i] = str[i];

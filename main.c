@@ -6,7 +6,7 @@
 /*   By: student@42 <@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 14:43:06 by student@42        #+#    #+#             */
-/*   Updated: 2015/11/28 11:59:14 by lscariot         ###   ########.fr       */
+/*   Updated: 2015/11/29 09:10:28 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -228,16 +228,16 @@ int					main(void)
 	D_ADD_TEST(strtrim);
 #define	D_LSTNEW
 	D_ADD_TEST(lstnew);
-//#define	D_LSTDELONE
-//	D_ADD_TEST(lstdelone);
-//#define	D_LSTDEL
-//	D_ADD_TEST(lstdel);
-//#define	D_LSTADD
-//	D_ADD_TEST(lstadd);
-//#define	D_LSTITER
-//	D_ADD_TEST(lstiter);
-//#define D_LSTMAP
-//	D_ADD_TEST(lstmap);
+#define	D_LSTDELONE
+	D_ADD_TEST(lstdelone);
+#define	D_LSTDEL
+	D_ADD_TEST(lstdel);
+#define	D_LSTADD
+	D_ADD_TEST(lstadd);
+#define	D_LSTITER
+	D_ADD_TEST(lstiter);
+#define D_LSTMAP
+	D_ADD_TEST(lstmap);
 	while (test[i].set == true)
 	{
 		printf("Test [%s] : ", test[i].name);

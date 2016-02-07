@@ -6,7 +6,7 @@
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 09:53:04 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/27 01:52:15 by lscariot         ###   ########.fr       */
+/*   Updated: 2016/02/06 23:01:41 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,16 @@
 char	*ft_strnew(size_t size)
 {
 	char	*str;
+	int		i;
 
+	i = 0;
 	str = malloc(size);
 	if (str == NULL)
 		return (NULL);
-	ft_memset(str, '\0', size);
+	while ((int)size > i)
+	{
+		str[i] = '\0';
+		i++;
+	}
 	return (str);
 }

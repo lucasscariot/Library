@@ -6,7 +6,7 @@
 /*   By: lscariot <lscariot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 11:44:59 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/29 09:44:09 by lscariot         ###   ########.fr       */
+/*   Updated: 2016/02/06 22:58:48 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,6 @@ char	**ft_strsplit(char const *s, char c)
 		if (s[*i] != c && s[*i])
 			str[j++] = ft_add(i, s, c);
 	}
-	str[j] = 0;
+	str[j] = NULL;
 	return (str);
 }

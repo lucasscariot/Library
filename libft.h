@@ -6,12 +6,21 @@
 /*   By: lucas <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/04 01:54:04 by lucas             #+#    #+#             */
-/*   Updated: 2015/11/29 10:10:49 by lscariot         ###   ########.fr       */
+/*   Updated: 2016/02/06 21:06:59 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# define RED "\033[31m"
+# define GREEN "\033[32m"
+# define YELLOW "\033[33m"
+# define BLUE "\033[34m"
+# define VIOLET "\033[35m"
+# define TURQUOISE "\033[36m"
+# define WHITE "\033[37m"
+
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
@@ -50,6 +59,7 @@ int				ft_isascii(int c);
 int				ft_isprint(int c);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
+
 void			*ft_memalloc(size_t size);
 void			ft_memdel(void **ap);
 char			*ft_strnew(size_t size);
@@ -74,10 +84,17 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char const *s, int fd);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
+
 t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 
+int				ft_sqrt(int n);
+void			ft_putcolor(char *str, char *color);
+int				ft_intlen(int i);
+void			ft_strswap(char **s1, char **s2);
+void			ft_putnchar(char c, int n);
+char			*ft_strndup(char *str, int n);
 #endif

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 15:19:22 by lscariot          #+#    #+#             */
-/*   Updated: 2015/11/27 04:33:19 by lscariot         ###   ########.fr       */
+/*   Created: 2016/02/04 19:13:31 by lscariot          #+#    #+#             */
+/*   Updated: 2016/02/04 19:37:14 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char			*ft_itoa(int n)
 	char		*str;
 
 	lengths(n, &len, &weight);
-	str = (char *)malloc(sizeof(*str) * (len + 1));
+	str = (char *)malloc(sizeof(*str) * (len + 2));
 	if (str == NULL)
 		return (NULL);
 	cur = 0;

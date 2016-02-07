@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strswap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 10:02:50 by lscariot          #+#    #+#             */
-/*   Updated: 2016/02/03 10:55:33 by lscariot         ###   ########.fr       */
+/*   Created: 2016/01/31 08:39:36 by lscariot          #+#    #+#             */
+/*   Updated: 2016/01/31 09:29:19 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_strswap(char **s1, char **s2)
 {
-	char	*str;
+	char	*tmp1;
+	char	*tmp2;
 
-	if (!s1 || !s2)
-		return (NULL);
-	str = malloc(sizeof(char) * ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (str == NULL)
-		return (NULL);
-	ft_strcpy(str, (char*)s1);
-	ft_strcat(str, s2);
-	return (str);
+	tmp1 = ft_strdup(*s1);
+	tmp2 = ft_strdup(*s2);
+	free(*s1);
+	free(*s2);
+	*s1 = ft_strdup(tmp2);
+	*s2 = ft_strdup(tmp1);
+	free(tmp1);
+	free(tmp2);
 }

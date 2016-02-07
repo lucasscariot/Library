@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putnchar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lscariot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 10:02:50 by lscariot          #+#    #+#             */
-/*   Updated: 2016/02/03 10:55:33 by lscariot         ###   ########.fr       */
+/*   Created: 2016/02/04 10:29:39 by lscariot          #+#    #+#             */
+/*   Updated: 2016/02/04 13:21:15 by lscariot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_putnchar(char c, int n)
 {
-	char	*str;
-
-	if (!s1 || !s2)
-		return (NULL);
-	str = malloc(sizeof(char) * ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (str == NULL)
-		return (NULL);
-	ft_strcpy(str, (char*)s1);
-	ft_strcat(str, s2);
-	return (str);
+	if (!c || !n || n < 0)
+		return ;
+	while (n--)
+	{
+		ft_putchar(c);
+	}
 }
